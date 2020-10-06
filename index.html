@@ -34,6 +34,47 @@
             <link rel="stylesheet" href="assets/css/slick.css">
             <link rel="stylesheet" href="assets/css/nice-select.css">
             <link rel="stylesheet" href="assets/css/style.css">
+
+            
+        <style>
+            .filterDiv {                    
+            display: none;        
+            }           
+
+            /* The "show" class is added to the filtered elements */
+            .show {
+            display: block;
+            }
+
+            .container {
+            margin-top: 20px;
+            overflow: hidden;
+            }
+
+            /* Style the buttons */
+            .btn {
+            border: none;
+            outline: none;
+            padding: 20px 20px;
+            background-color: #666;            
+            cursor: pointer;            
+            }
+
+            /* Add a light grey background on mouse-over */
+            .btn:hover {
+            background-color: #666;
+            background: #4c98f2;
+            }
+
+            /* Add a dark background to the active button */
+            .btn.active {
+            background-color: #4c98f2;
+            color: white;
+            }
+            .btn::before{
+                background: #4c98f2;
+            }
+        </style>
    </head>
 
    <body>
@@ -143,7 +184,44 @@
                         </div>
                     </div>
                 </div>
-              
+
+                <!-- Control buttons -->
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')"> Todos</button>
+                    <button class="btn" onclick="filterSelection('gaseosas')"> Gaseosas</button>
+                    <button class="btn" onclick="filterSelection('abarrotes')"> Abarrotes</button>
+                    <button class="btn" onclick="filterSelection('electrodomesticos')"> Electrodomésticos</button>
+                    <button class="btn" onclick="filterSelection('licores')"> Licores</button>
+                </div>
+
+                <br></br>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="filterDiv gaseosas">
+                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/1.embed?showlink=false"></iframe>
+                    </div>
+
+                    <div class="filterDiv abarrotes">
+                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/3.embed?showlink=false"></iframe>
+                    </div>
+
+                    <div class="filterDiv abarrotes">
+                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/5.embed?showlink=false"></iframe> 
+                    </div>
+
+                    <div class="filterDiv electrodomesticos">
+                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/8.embed?showlink=false"></iframe>
+                    </div>
+
+                    <div class="filterDiv abarrotes">
+                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/10.embed?showlink=false"></iframe>
+                    </div>
+
+                    <div class="filterDiv licores">
+                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/12.embed?showlink=false"></iframe>
+                    </div>            
+                </div>               
+                <!--
                 <div class="row d-flex justify-content-center">  
                     <div class="row">           
                         <div class="column">
@@ -160,6 +238,53 @@
                         </div>
                     </div>                
                 </div>
+                -->
+
+                <script>
+                    filterSelection("all")
+                    function filterSelection(c) {
+                    var x, i;
+                    x = document.getElementsByClassName("filterDiv");
+                    if (c == "all") c = "";
+                    for (i = 0; i < x.length; i++) {
+                        w3RemoveClass(x[i], "show");
+                        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                    }
+                    }
+
+                    function w3AddClass(element, name) {
+                    var i, arr1, arr2;
+                    arr1 = element.className.split(" ");
+                    arr2 = name.split(" ");
+                    for (i = 0; i < arr2.length; i++) {
+                        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+                    }
+                    }
+
+                    function w3RemoveClass(element, name) {
+                    var i, arr1, arr2;
+                    arr1 = element.className.split(" ");
+                    arr2 = name.split(" ");
+                    for (i = 0; i < arr2.length; i++) {
+                        while (arr1.indexOf(arr2[i]) > -1) {
+                        arr1.splice(arr1.indexOf(arr2[i]), 1);     
+                        }
+                    }
+                    element.className = arr1.join(" ");
+                    }
+
+                    // Add active class to the current button (highlight it)
+                    var btnContainer = document.getElementById("myBtnContainer");
+                    var btns = btnContainer.getElementsByClassName("btn");
+                    for (var i = 0; i < btns.length; i++) {
+                    btns[i].addEventListener("click", function(){
+                        var current = document.getElementsByClassName("active");
+                        current[0].className = current[0].className.replace(" active", "");
+                        this.className += " active";
+                    });
+                    }
+
+                </script>
                 
             </div>         
         </section>

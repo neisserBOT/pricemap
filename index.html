@@ -35,11 +35,17 @@
             <link rel="stylesheet" href="assets/css/nice-select.css">
             <link rel="stylesheet" href="assets/css/style.css">
 
-            
+        <!-- Plotly -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        
         <style>
             .filterDiv {                    
             display: none;        
-            }           
+            }
+
+            .filterContact {
+                display: none;
+            }         
 
             /* The "show" class is added to the filtered elements */
             .show {
@@ -76,13 +82,13 @@
                 color: white;
                 border: 5px solid #4c98f2;
             }
-        </style>
+        </style>         
    </head>
 
    <body>
        
     <!-- Preloader Start -->
-    <!--
+    
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -93,7 +99,7 @@
             </div>
         </div>
     </div>
-    -->
+   
     <!-- Preloader Start -->
 
     <header>
@@ -148,30 +154,7 @@
 
     <main>
 
-        <!-- Slider Area Start-->
-        <div class="slider-area">
-            <div class="slider-active">
-                <div class="single-slider slider-height slider-padding sky-blue d-flex align-items-center">
-                    <div class="container">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-lg-6 col-md-9 ">
-                                <div class="hero__caption">
-                                    <span data-animation="fadeInUp" data-delay=".4s"><button style="background-color:#e24d42; border: none; font-size: 12px; padding: 6px 12px; padding: 10px 15px;">AL INSTANTE</button></span>
-                                    <h1 data-animation="fadeInUp" data-delay=".6s">Observatorio de <br> precios</h1>
-                                    <p data-animation="fadeInUp" data-delay=".8s">Compara el precio del mismo producto en diferentes puntos de venta y obtén métricas clave para tomar mejores decisiones.</p>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="hero__img d-none d-lg-block f-right" data-animation="fadeInRight" data-delay="1s">
-                                    <img src="assets/img/gallery/pricemap_landing.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div> 
-        </div>
+       
         
         <!-- Slider Area End -->
         
@@ -186,146 +169,58 @@
                         </div>
                     </div>
                 </div>
-              
 
-                <!-- Control buttons -->
-                <div id="myBtnContainer" style="text-align: center;">
-                    <button class="btn active" onclick="filterSelection('all')">Todos</button>                                  
-                    <button class="btn" onclick="filterSelection('abarrotes')">Abarrotes</button> 
-                    <button class="btn" onclick="filterSelection('gaseosas')">Gaseosas</button>                  
-                    <button class="btn" onclick="filterSelection('lacteos')">Lácteos</button>                    
-                    <button class="btn" onclick="filterSelection('licores')">Licores</button>
-                    <button class="btn" onclick="filterSelection('tecnologia')">Tecnología</button>                    
+                 <!-- Control buttons -->
+                 <div id="myBtnContainer" style="text-align: center;">
+                    <button class="btn active" onclick="filterSelection('all')">Navidad</button>                                                   
                 </div>
-
-                <br></br>
-
-                <div class="row d-flex justify-content-center">
+              
+              
+               <div class="row d-flex justify-content-center">      
+                   
+                   
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/coca_cola_botella_3l.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/inca_kola_botella_3l.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/paneton_donofrio_caja_900g.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/paneton_donofrio_tradicional_bolsa_900g.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/paneton_gloria_bolsa_900g.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/paneton_todinno_caja_900g.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/pavo_entero_redondos.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/pavo_entero_san_fernando.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/pilsen_six_pack_310ml.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/pisco_4_gallos_mosto_verde_700ml.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/ron_cartavio_solera_12_años_750ml.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/tableta_sol_del_cusco_chocolate_tradicional_90g.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/tableta_sol_del_cusco_clavo_canela_90g.html"></iframe>
+                    <iframe class="filterDiv gaseosas" width="600" height="350" frameborder="0" scrolling="no" src="graphics/chocolate_instantaneo_sol_del_cusco_90g.html"></iframe>
+              
                     
-                    <div class="filterDiv gaseosas">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/140.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv gaseosas">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/142.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv gaseosas">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/144.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv gaseosas">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/1.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/3.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/5.embed?showlink=false"></iframe> 
-                    </div>
-
-                    <div class="filterDiv tecnologia">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/8.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/10.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv licores">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/12.embed?showlink=false"></iframe>
-                    </div>                   
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/146.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv lacteos">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/148.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/150.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/152.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/154.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/156.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/158.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/160.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/162.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv abarrotes">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/164.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv lacteos">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/166.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv lacteos">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/168.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv lacteos">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/170.embed?showlink=false"></iframe>
-                    </div>
-
-                    <div class="filterDiv tecnologia">
-                        <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/172.embed?showlink=false"></iframe>
-                    </div>
-
 
                 </div>               
-                <!--
-                <div class="row d-flex justify-content-center">  
-                    <div class="row">           
-                        <div class="column">
-                            <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/1.embed?showlink=false"></iframe>
-                            <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/3.embed?showlink=false"></iframe>
-                            <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/5.embed?showlink=false"></iframe>                            
-                        </div>
-                    </div>            
-                    <div class="row"> 
-                        <div class="column">
-                            <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/8.embed?showlink=false"></iframe>
-                            <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/10.embed?showlink=false"></iframe>
-                            <iframe width="400" height="350" frameborder="0" scrolling="no" src="//plotly.com/~neisserBOT/12.embed?showlink=false"></iframe>
-                        </div>
-                    </div>                
-                </div>
-                -->
-
+               
+              
                 <script>
                     filterSelection("all")
+
                     function filterSelection(c) {
                     var x, i;
-                    x = document.getElementsByClassName("filterDiv");
-                    if (c == "all") c = "";
+                    
+                    x = document.getElementsByClassName("filterDiv");          
+                    if (c == "all") c = "";                            
+            
                     for (i = 0; i < x.length; i++) {
+                        console.log(x[i])
                         w3RemoveClass(x[i], "show");
                         if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
                     }
+                
+                    var j = document.getElementsByClassName("filterContact");    
+                    w3RemoveClass(j[0], "show");
+                        if (c != "") {
+                            if (j[0].className.indexOf("contact") > -1) w3AddClass(j[0], "show");
+                        } 
                     }
+                    
 
                     function w3AddClass(element, name) {
                     var i, arr1, arr2;
@@ -334,6 +229,7 @@
                     for (i = 0; i < arr2.length; i++) {
                         if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
                     }
+
                     }
 
                     function w3RemoveClass(element, name) {
@@ -363,35 +259,10 @@
                 
             </div>         
         </section>
-        <!-- Observatorio End -->
+
+       
         
-        
-        <!-- Say Something Start -->
-        <div class="say-something-aera pt-90 pb-90 fix sky-blue">
-            <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="say-shape">
-                        <!--<img src="assets/img/shape/say-shape-left.png" alt="" class="say-shape1 rotateme d-none d-xl-block">-->
-                        <img src="assets/img/shape/say-shape-right.png" alt="Snow" class="say-shape2 d-none d-lg-block">
-                                                 
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="say-something-cap" style="position: relative;">
-                            <h2>¿Te gustaría contar con <br> Pricemap para los productos <br> de tu empresa?</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div style="background-color: #ffffff; padding: 50px; border-radius: 30px; position: relative;">                                                                 
-                            <p style="font-size: 17px;">Contáctanos <br> +51 (1) 7772037 <br> proyectos@neurometrics.la</p>                                                          
-                        </div>
-                    </div>
-                                     
-                </div>
-            </div>
-            
-            
-        </div>     
-        <!-- Say Something End -->
+       
 
     </main>
 
@@ -423,7 +294,7 @@
    
     <!-- JS here -->
         <!-- Important!!! In order to allow your videoask to open up on the same page when interacting with the widget, your website must use the secure https:// protocol (i.e have an SSL certificate). Otherwise, when clicking the widget, a new tab will be automatically opened in the browser.
-        -->      
+        -->              
     
 		<!-- All JS Custom Plugins Link Here here -->
         <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
